@@ -1,11 +1,14 @@
 {
   "name": "koa-analytics",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Google Analytics cookie parsing middleware for Koa via universal-analytics",
   "main": "index.js",
   "repository": "https://github.com/tinovyatkin/koa-analytics.git",
   "author": "Tino Vyatkin <tino@vtkn.io>",
   "license": "MIT",
+  "files": [
+    "index.js"
+  ],
   "peerDependencies": {
     "universal-analytics": "^0.4.10"
   },
