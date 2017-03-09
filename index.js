@@ -10,6 +10,7 @@ module.exports = (tid, options = {}) => {
     let cid = null;
     if (ctx.cookies && ctx.cookies[cookieName]) {
       try {
+				// Google Analytics cookie are normally - GA1.2.590908120.1488500648
         cid = ctx.cookies[cookieName].split('.').slice(2).join('.');
       } catch (e) {}
     }
