@@ -1,6 +1,6 @@
 const init, { createFromSession } = require('universal-analytics');
-module.exports = (tid, { cookieName = '_ga' } = {}) => {
-
+module.exports = (tid, options = {}) => {
+	const { cookieName = '_ga' } = options;
 	return (ctx, next) => {
 
 		ctx.state.visitor = createFromSession(ctx.session);
@@ -14,10 +14,10 @@ module.exports = (tid, { cookieName = '_ga' } = {}) => {
       } catch(e) {}
 		}
 
-		req.visitor = init(tid, cid, options);
+		ctx.state.visitor = init(tid, cid, options);
 
 		if (req.session) {
-			req.session.cid = req.visitor.cid;
+			ctx.session.cid = ctx.state.visitor.cid;
 		}
 
 		return next();
