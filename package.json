@@ -1,5 +1,5 @@
 {
-  "name": "koa-analytics",
+  "name": "koa-analytics-middleware",
   "version": "1.0.2",
   "description": "Google Analytics cookie parsing middleware for Koa via universal-analytics",
   "main": "index.js",
