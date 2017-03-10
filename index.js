@@ -3,9 +3,10 @@ const ua = require('universal-analytics');
 module.exports = (tid, options = {}) => {
   const { cookieName = '_ga' } = options;
   return (ctx, next) => {
-    ctx.state.visitor = ua.createFromSession(ctx.session);
-
-    if (ctx.state.visitor) return next();
+    if (ctx.session && ctx.session.cid) {
+      ctx.state.visitor = ua(tid, ctx.session.cid, options);
+      if (ctx.state.visitor) return next();
+    }
 
     let cid = null;
     if (ctx.cookies && ctx.cookies[cookieName]) {
