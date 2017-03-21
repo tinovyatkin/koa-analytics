@@ -1,6 +1,6 @@
 {
   "name": "koa-analytics-middleware",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Google Analytics cookie parsing middleware for Koa via universal-analytics",
   "main": "index.js",
   "repository": "https://github.com/tinovyatkin/koa-analytics.git",
@@ -10,12 +10,12 @@
     "index.js"
   ],
   "peerDependencies": {
-    "universal-analytics": "^0.4.10"
+    "universal-analytics": "^0.4.12"
   },
   "devDependencies": {
-    "eslint": "^3.17.1",
+    "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
-    "universal-analytics": "^0.4.10"
+    "universal-analytics": "^0.4.12"
   }
 }
