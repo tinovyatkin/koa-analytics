@@ -3,8 +3,12 @@ const ua = require('universal-analytics');
 module.exports = (tid, options = {}) => {
   const { cookieName = '_ga' } = options;
   return (ctx, next) => {
+    const opt = Object.assign({
+      userAgentOverride: ctx.get('user-agent'),
+      documentReferrer: ctx.get('referrer'),
+    }, options);
     if (ctx.session && ctx.session.cid) {
-      ctx.state.visitor = ua(tid, ctx.session.cid, options);
+      ctx.state.visitor = ua(tid, ctx.session.cid, opt);
       if (ctx.state.visitor) return next();
     }
 
@@ -16,7 +20,7 @@ module.exports = (tid, options = {}) => {
       } catch (e) {}
     }
 
-    ctx.state.visitor = ua(tid, cid, options);
+    ctx.state.visitor = ua(tid, cid, opt);
 
     if (ctx.session) {
       ctx.session.cid = ctx.state.visitor.cid;
