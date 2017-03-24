@@ -6,7 +6,7 @@ module.exports = (tid, options = {}) => {
     const persistentParams = {
       ua: ctx.get('user-agent'),
       dr: ctx.get('referrer'),
-      uip: ctx.ip,
+      uip: ctx.ip
     };
     if ('gclid' in ctx.query) persistentParams.gclid = ctx.query.gclid;
     for (const prop in persistentParams) {
@@ -15,7 +15,7 @@ module.exports = (tid, options = {}) => {
 
     const opt = Object.assign(
       { headers: { 'User-Agent': ctx.get('User-Agent') } },
-      options,
+      options
     );
 
     let cid = null;
