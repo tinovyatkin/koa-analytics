@@ -28,13 +28,7 @@ module.exports = (tid, options = {}) => {
       }
     } else if (ctx.session && ctx.session.cid) {
       Object.assign(persistentParams, ctx.session.ga_params || {});
-      ctx.state.visitor = ua(
-        tid,
-        ctx.session.cid,
-        options,
-        null,
-        persistentParams,
-      );
+      ctx.state.visitor = ua(tid, ctx.session.cid, opt, null, persistentParams);
       if (ctx.state.visitor) return next();
     }
 
