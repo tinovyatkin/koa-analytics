@@ -9,22 +9,36 @@ module.exports = (tid, options = {}) => {
       uip: ctx.ip,
     };
     if ('gclid' in ctx.query) persistentParams.gclid = ctx.query.gclid;
-
-    if (ctx.session && ctx.session.cid) {
-      Object.assign(persistentParams, ctx.session.ga_params || {});
-      ctx.state.visitor = ua(tid, ctx.session.cid, options, null, persistentParams);
-      if (ctx.state.visitor) return next();
+    for (const prop in persistentParams) {
+      if (!persistentParams[prop]) delete persistentParams[prop];
     }
+
+    const opt = Object.assign(
+      { headers: { 'User-Agent': ctx.get('User-Agent') } },
+      options,
+    );
 
     let cid = null;
     if (ctx.cookies && ctx.cookies[cookieName]) {
       try {
-				// Google Analytics cookie are normally - GA1.2.590908120.1488500648
+        // Google Analytics cookie are normally - GA1.2.590908120.1488500648
         cid = ctx.cookies[cookieName].split('.').slice(2).join('.');
-      } catch (e) {}
+      } catch (e) {
+        console.error(e);
+      }
+    } else if (ctx.session && ctx.session.cid) {
+      Object.assign(persistentParams, ctx.session.ga_params || {});
+      ctx.state.visitor = ua(
+        tid,
+        ctx.session.cid,
+        options,
+        null,
+        persistentParams,
+      );
+      if (ctx.state.visitor) return next();
     }
 
-    ctx.state.visitor = ua(tid, cid, options, null, persistentParams);
+    ctx.state.visitor = ua(tid, cid, opt, null, persistentParams);
 
     if (ctx.session) {
       ctx.session.cid = ctx.state.visitor.cid;
