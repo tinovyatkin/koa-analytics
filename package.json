@@ -1,6 +1,6 @@
 {
   "name": "koa-analytics-middleware",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Google Analytics cookie parsing middleware for Koa via universal-analytics",
   "main": "index.js",
   "repository": "https://github.com/tinovyatkin/koa-analytics.git",
