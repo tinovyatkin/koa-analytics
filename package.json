@@ -15,7 +15,7 @@
   "devDependencies": {
     "eslint": "7.26.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-plugin-import": "2.23.2",
+    "eslint-plugin-import": "2.23.3",
     "universal-analytics": "0.4.23"
   }
 }
