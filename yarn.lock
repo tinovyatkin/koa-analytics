@@ -195,6 +195,13 @@ debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
+debug@^4.3.1:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
+  integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
+  dependencies:
+    ms "2.1.2"
+
 debug@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
@@ -1036,12 +1043,12 @@ unbox-primitive@^1.0.1:
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
 
-universal-analytics@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/universal-analytics/-/universal-analytics-0.5.1.tgz#6bdaba2109d98522dd74018d8fe56f0464d21625"
-  integrity sha512-raLjYsNQmJbK0o8veSU9GXA5XG/YhfuZDzWCAB4SNDnPI4ozXLrbFSDZiRENdOFEIUqmdUTYcaQCOa0Y36EtsQ==
+universal-analytics@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/universal-analytics/-/universal-analytics-0.5.2.tgz#ff1cfc53fd6d466653949e284aa8e7ff7a772020"
+  integrity sha512-wNlkW0hQKBJ4UDg3umv/9HZ6tPmzuorxQNmzFD5oiHKz37ddBmV6OpA4aYreyOmKBTzA3DEoTZjwCemw7yc1Og==
   dependencies:
-    debug "^4.1.1"
+    debug "^4.3.1"
     uuid "^8.0.0"
 
 uri-js@^4.2.2:
