@@ -16,6 +16,6 @@
     "eslint": "8.4.1",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.25.3",
-    "universal-analytics": "0.5.2"
+    "universal-analytics": "0.5.3"
   }
 }
