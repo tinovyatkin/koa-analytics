@@ -1043,10 +1043,10 @@ unbox-primitive@^1.0.1:
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
 
-universal-analytics@0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/universal-analytics/-/universal-analytics-0.5.2.tgz#ff1cfc53fd6d466653949e284aa8e7ff7a772020"
-  integrity sha512-wNlkW0hQKBJ4UDg3umv/9HZ6tPmzuorxQNmzFD5oiHKz37ddBmV6OpA4aYreyOmKBTzA3DEoTZjwCemw7yc1Og==
+universal-analytics@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/universal-analytics/-/universal-analytics-0.5.3.tgz#ff2d9b850062cdd4a8f652448047982a183c8e96"
+  integrity sha512-HXSMyIcf2XTvwZ6ZZQLfxfViRm/yTGoRgDeTbojtq6rezeyKB0sTBcKH2fhddnteAHRcHiKgr/ACpbgjGOC6RQ==
   dependencies:
     debug "^4.3.1"
     uuid "^8.0.0"
